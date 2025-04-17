@@ -3,7 +3,7 @@ class CreateSearchParams < ActiveRecord::Migration[8.0]
     create_table :search_params do |t|
       t.string :ip
       t.text :last_search
-      t.datetime :updated_at
+      # t.datetime :updated_at
 
       t.timestamps
     end
