@@ -7,15 +7,17 @@ class SearchController < ApplicationController
 
     session = SearchParam.find_or_initialize_by(ip: ip)
 
-    if session.last_search.present? && query.start_with?(session.last_search)
-      # User is still typing – do not log
+    if query == session.last_search
+     
+    elsif session.last_search.present? && query.start_with?(session.last_search)
+    
       session.update!(last_search: query)
     else
-      # It's a final query or a fresh query
+  
       SearchQuery.create!(ip: ip, query: query)
       session.update!(last_search: query)
     end
 
-    render json: { status: ' search query logged' }
+    render json: { status: 'query logged if complete' }
   end
 end
