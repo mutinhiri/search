@@ -16,6 +16,6 @@ class SearchController < ApplicationController
       session.update!(last_search: query)
     end
 
-    render json: { status: 'logged' }
+    render json: { status: ' search query logged' }
   end
 end
