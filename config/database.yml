@@ -101,5 +101,5 @@ production:
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: search_production_cable
+    database: <%= ENV['DB_NAME'] %>
     migrations_paths: db/cable_migrate
