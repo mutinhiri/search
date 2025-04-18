@@ -79,7 +79,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: search_w9ay
+    database: postgresql://search:UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ@dpg-d011iojuibrs73eu19kg-a.oregon-postgres.render.com/search_w9ay
     username: search
     password: UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ
   cache:
