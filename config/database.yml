@@ -40,5 +40,5 @@ production: &primary_production
 
   cable:
     <<: *primary_production
-    database: <%= ENV["DB_NAME"] %>
+    database: <%= ENV["DB_URL"] %>
     migrations_paths: db/cable_migrate
