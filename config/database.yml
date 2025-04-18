@@ -8,7 +8,7 @@ development:
   database: search_development
   username: <%= ENV["DB_USER"] %>
   password: <%= ENV["DB_PASSWORD"] %>
-  host: <%= ENV["DB_HOST"] %>
+  host: <%= ENV["DB_HOST"] || "localhost" %>
   port: <%= ENV["DB_PORT"] || 5432 %>
 
 test:
@@ -16,7 +16,7 @@ test:
   database: search_test
   username: <%= ENV["DB_USER"] %>
   password: <%= ENV["DB_PASSWORD"] %>
-  host: <%= ENV["DB_HOST"] %>
+  host: <%= ENV["DB_HOST"] || "localhost" %>
   port: <%= ENV["DB_PORT"] || 5432 %>
 
 production: &primary_production
@@ -28,16 +28,19 @@ production: &primary_production
   port: <%= ENV["DB_PORT"] || 5432 %>
   url: <%= ENV["DB_URL"] %>
 
+  # Cache Database Configuration
   cache:
     <<: *primary_production
     database: search_production_cache
     migrations_paths: db/cache_migrate
 
+  # Queue Database Configuration
   queue:
     <<: *primary_production
     database: search_production_queue
     migrations_paths: db/queue_migrate
 
+  # Cable Database Configuration
   cable:
     <<: *primary_production
     adapter: postgresql
