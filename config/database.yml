@@ -77,12 +77,21 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] || 5432 %>
+  url:  <%= ENV['DB_URL'] %>
+  pool: 5
   primary: &primary_production
     <<: *default
-    database: postgresql://search:UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ@dpg-d011iojuibrs73eu19kg-a.oregon-postgres.render.com/search_w9ay
-    username: search
-    password: UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ
-  cache:
+  #   database: postgresql://search:UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ@dpg-d011iojuibrs73eu19kg-a.oregon-postgres.render.com/search_w9ay
+  #   username: search
+  #   password: UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ
+  # cache:
     <<: *primary_production
     database: search_production_cache
     migrations_paths: db/cache_migrate
