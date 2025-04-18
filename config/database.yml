@@ -63,7 +63,7 @@ test:
 # ever seen by anyone, they now have access to your database.
 #
 
-DATABASE_URL="postgresql://search:UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ@dpg-d011iojuibrs73eu19kg-a.oregon-postgres.render.com/search_w9ay"
+# DATABASE_URL="postgresql://search:UzztF6Q5WlsemqX1zVbPQmgjqiKxZQqJ@dpg-d011iojuibrs73eu19kg-a.oregon-postgres.render.com/search_w9ay"
 
 # If the connection URL is provided in the special DATABASE_URL environment
 # variable, Rails will automatically merge its configuration values on top of
