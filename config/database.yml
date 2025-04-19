@@ -29,16 +29,16 @@ production: &primary_production
   # url: <%= ENV["DB_URL"] %>
 
   # Cache Database Configuration
-  cache:
-    <<: *primary_production
-    database: search_production_cache
-    migrations_paths: db/cache_migrate
+  # cache:
+  #   <<: *primary_production
+  #   database: search_production_cache
+  #   migrations_paths: db/cache_migrate
 
-  # Queue Database Configuration
-  queue:
-    <<: *primary_production
-    database: search_production_queue
-    migrations_paths: db/queue_migrate
+  # # Queue Database Configuration
+  # queue:
+  #   <<: *primary_production
+  #   database: search_production_queue
+  #   migrations_paths: db/queue_migrate
 
   # Cable Database Configuration
   cable:
