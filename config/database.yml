@@ -26,7 +26,7 @@ production: &primary_production
   password: <%= ENV["DB_PASSWORD"] %>
   host: <%= ENV["DB_HOST"] %>
   port: <%= ENV["DB_PORT"] || 5432 %>
-  # url: <%= ENV["DB_URL"] %>
+  url: <%= ENV["DB_URL"] %>
 
   # Cache Database Configuration
   # cache:
@@ -45,8 +45,8 @@ production: &primary_production
     <<: *primary_production
     # adapter: postgresql
     # encoding: unicode
-    # database: <%= ENV["DB_NAME"] %>
-    # username: <%= ENV["DB_USER"] %>
-    # password: <%= ENV["DB_PASSWORD"] %>
-    # host: <%= ENV["DB_HOST"] %>
+    database: <%= ENV["DB_NAME"] %>
+    username: <%= ENV["DB_USER"] %>
+    password: <%= ENV["DB_PASSWORD"] %>
+    host: <%= ENV["DB_HOST"] %>
     # pool: 5
